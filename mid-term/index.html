@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeAnimals Clone - Interactive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital@1&family=Raleway:wght@300;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo"><img src="assets/logo_window.png" alt="BeAnimals Logo"></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ARTICLES</a></li>
+                    <li><a href="#">YOUR PUPILS</a></li>
+                    <li><a href="#">WHO WE ARE</a></li>
+                    <li><a href="checkout.html" style="color: var(--primary-color);">CHECKOUT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-slider-container">
+            <input type="radio" id="slide1" name="hero-slider" checked>
+            <input type="radio" id="slide2" name="hero-slider">
+            <div class="slides">
+                <div class="slide slide-1">
+                    <div class="hero-content">
+                        <p class="hero-subtext">meet Chappy</p>
+                        <h1 class="hero-headline">THE LIFESAVER DOG</h1>
+                        <a href="#" class="cta-button">Read the article</a>
+                    </div>
+                </div>
+                <div class="slide slide-2">
+                    <div class="hero-content">
+                        <p class="hero-subtext">meet Maximus</p>
+                        <h1 class="hero-headline">A LOYAL FRIEND</h1>
+                        <a href="#" class="cta-button">Read the article</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-nav-controls">
+                <label for="slide2" class="nav-for-s1 prev"></label><label for="slide2" class="nav-for-s1 next"></label>
+                <label for="slide1" class="nav-for-s2 prev"></label><label for="slide1" class="nav-for-s2 next"></label>
+            </div>
+        </section>
+
+        <section class="articles-section">
+             <div class="container">
+                <div class="section-title">
+                    <h2>Fresh blogs and articles</h2>
+                </div>
+                <div class="articles-grid">
+                    <div class="card">
+                        <img src="assets/home_animals_parrot.jpg" alt="A grey parrot.">
+                        <div class="card-content">
+                            <span class="card-date">May 9, 2024</span>
+                            <p>The amazing world of parrots and their intelligence.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/flex_box_cat2.jpg" alt="A grey tabby cat.">
+                        <div class="card-content">
+                            <span class="card-date">May 8, 2024</span>
+                            <p>Keeping your indoor cat happy and healthy.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/flex_box_dog3.jpg" alt="A black dog.">
+                        <div class="card-content">
+                            <span class="card-date">May 7, 2024</span>
+                            <p>Training tips for your new rescue dog.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="assets/flex_box_cat3.jpg" alt="A relaxed cat.">
+                        <div class="card-content">
+                            <span class="card-date">May 6, 2024</span>
+                            <p>Understanding cat behavior: What are they thinking?</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section gray-bg">
+            <div class="container info-container">
+                <div class="info-text">
+                    <h2>What's interesting about <span class="highlight">cats</span></h2>
+                    <div class="info-columns">
+                        <div>
+                            <h5>Independent Nature</h5>
+                            <p>Cats are known for their self-sufficiency, but they also form strong bonds with their owners. <a href="#">More</a></p>
+                        </div>
+                        <div>
+                            <h5>Natural Hunters</h5>
+                            <p>Their instincts make them skilled predators, a trait seen even in domesticated cats during playtime. <a href="#">More</a></p>
+                        </div>
+                    </div>
+                     <div>
+                        <h5>Communication Methods</h5>
+                        <p>Cats communicate through a variety of vocalizations, body language, and chemical signals. <a href="#">More</a></p>
+                    </div>
+                </div>
+                <div class="info-image"><img src="assets/home_animals_cat_with_frame.jpg" alt="A cute grey kitten sitting inside an orange frame."></div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="container info-container reverse">
+                <div class="info-text">
+                    <h2>What's interesting about <span class="highlight">dogs</span></h2>
+                    <div class="info-columns">
+                        <div>
+                            <h5>Unwavering Loyalty</h5>
+                            <p>Dogs are pack animals, which is why they often form incredibly strong and loyal bonds with their human families. <a href="#">More</a></p>
+                        </div>
+                        <div>
+                            <h5>Diverse Breeds</h5>
+                            <p>From the tiny Chihuahua to the giant Great Dane, the diversity among dog breeds is astounding. <a href="#">More</a></p>
+                        </div>
+                    </div>
+                     <div>
+                        <h5>Trainability</h5>
+                        <p>Their intelligence and eagerness to please make dogs highly trainable for various tasks and companionship. <a href="#">More</a></p>
+                    </div>
+                </div>
+                <div class="info-image"><img src="assets/home_animals_dog_in_frame.jpg" alt="A dog inside an orange frame."></div>
+            </div>
+        </section>
+
+        <section class="pupils-section gray-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Your pupils' photos</h2>
+                    <p>A collection of photos sent in by our wonderful community. See the joy and personality of our beloved animal companions.</p>
+                </div>
+                <div class="gallery-grid">
+                    <a href="#img1" class="gallery-item"><img src="assets/flex_box_dog.jpg" alt="Golden retriever."></a>
+                    <a href="#img2" class="gallery-item"><img src="assets/flex_box_dog2.jpg" alt="Cockapoo."></a>
+                    <a href="#img3" class="gallery-item"><img src="assets/flex_box_cat1.jpg" alt="Cat on a branch."></a>
+                    <a href="#img4" class="gallery-item"><img src="assets/flex_box_cat2.jpg" alt="Grey cat."></a>
+                    <a href="#img5" class="gallery-item"><img src="assets/flex_box_dog3.jpg" alt="Black labrador."></a>
+                    <a href="#img6" class="gallery-item"><img src="assets/flex_box_cat3.jpg" alt="Sleeping cat."></a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Customer Testimonials</h2>
+                </div>
+                <input type="checkbox" id="view-more-toggle" class="view-more-checkbox">
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <img src="assets/flex_box_cat2.jpg" alt="Profile of ali" class="testimonial-img">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <blockquote class="testimonial-text">
+                            <p>"The quality of the pet food is amazing! My dog has never been healthier or happier. "</p>
+                        </blockquote>
+                        <cite class="testimonial-author">- ahmad</cite>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="assets/flex_box_dog2.jpg" alt="Profile of ahmad" class="testimonial-img">
+                        <div class="testimonial-rating">★★★★☆</div>
+                        <blockquote class="testimonial-text">
+                            <p>"Great selection of toys and accessories. "</p>
+                        </blockquote>
+                        <cite class="testimonial-author">- ali</cite>
+                    </div>
+                    <!-- Hidden Testimonials -->
+                    <div class="testimonial-card">
+                        <img src="assets/flex_box_cat1.jpg" alt="Profile of rizwan" class="testimonial-img">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <blockquote class="testimonial-text">
+                            <p>"Excellent customer service. They helped me choose the perfect bed for my senior dog."</p>
+                        </blockquote>
+                        <cite class="testimonial-author">- rizwan</cite>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="assets/flex_box_dog.jpg" alt="Profile of mahnoor" class="testimonial-img">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <blockquote class="testimonial-text">
+                            <p>"I've been a loyal customer for years. The prices are fair, the products are top-notch. "</p>
+                        </blockquote>
+                        <cite class="testimonial-author">- mahnoor</cite>
+                    </div>
+                </div>
+                <label for="view-more-toggle" class="view-more-btn">
+                    <span class="view-more-text">View More</span>
+                    <span class="view-less-text">View Less</span>
+                </label>
+            </div>
+        </section>
+
+        <section class="secondary-cta">
+             <div class="container">
+                <h2>We <img src="assets/home_animals_heart.png" alt="love" class="heart-icon"> animals</h2>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="copyright">&copy; 2025 BeAnimals by Muffin group | All Rights Reserved</div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ARTICLES</a></li>
+                    <li><a href="#">YOUR PUPILS</a></li>
+                    <li><a href="#">WHO WE ARE</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Lightbox Structure (references files from the pupils section) -->
+    <div class="lightbox" id="img1"><div class="lightbox-content"><a href="#" class="close">×</a><img src="assets/flex_box_dog.jpg" alt="Golden retriever."><a href="#img6" class="prev">‹</a><a href="#img2" class="next">›</a><span class="lightbox-counter">1/6</span></div></div>
+    <div class="lightbox" id="img2"><div class="lightbox-content"><a href="#" class="close">×</a><img src="assets/flex_box_dog2.jpg" alt="Cockapoo."><a href="#img1" class="prev">‹</a><a href="#img3" class="next">›</a><span class="lightbox-counter">2/6</span></div></div>
+    <div class="lightbox" id="img3"><div class="lightbox-content"><a href="#" class="close">×</a><img src="assets/flex_box_cat1.jpg" alt="Cat on a branch."><a href="#img2" class="prev">‹</a><a href="#img4" class="next">›</a><span class="lightbox-counter">3/6</span></div></div>
+    <div class="lightbox" id="img4"><div class="lightbox-content"><a href="#" class="close">×</a><img src="assets/flex_box_cat2.jpg" alt="Grey cat."><a href="#img3" class="prev">‹</a><a href="#img5" class="next">›</a><span class="lightbox-counter">4/6</span></div></div>
+    <div class="lightbox" id="img5"><div class="lightbox-content"><a href="#" class="close">×</a><img src="assets/flex_box_dog3.jpg" alt="Black labrador."><a href="#img4" class="prev">‹</a><a href="#img6" class="next">›</a><span class="lightbox-counter">5/6</span></div></div>
+    <div class="lightbox" id="img6"><div class="lightbox-content"><a href="#" class="close">×</a><img src="assets/flex_box_cat3.jpg" alt="Sleeping cat."><a href="#img5" class="prev">‹</a><a href="#img1" class="next">›</a><span class="lightbox-counter">6/6</span></div></div>
+
+</body>
+</html>
