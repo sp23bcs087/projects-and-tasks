@@ -1,0 +1,20 @@
+
+.table-responsive {
+    max-height: 80vh; 
+}
+
+.table th, .table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+
+.table th:first-child, .table td:first-child {
+    max-width: 200px;
+}
+
+.table .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
