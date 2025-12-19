@@ -1,0 +1,86 @@
+<%- include('partials/admin-header', {title: 'Manage Orders' , activePage: 'orders' }) %>
+
+    <style>
+        .badge[data-status="Placed"] {
+            background: #ffc107;
+            color: white;
+        }
+
+        .badge[data-status="Processing"] {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .badge[data-status="Delivered"] {
+            background: #28a745;
+            color: white;
+        }
+    </style>
+
+    <div class="admin-card">
+        <div class="card-header">
+            <h2>Customer Orders</h2>
+        </div>
+        <div class="table-responsive">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer Email</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% orders.forEach(order=> { %>
+                        <tr>
+                            <td style="font-family: monospace; font-size: 0.85rem;">
+                                <%= order._id %>
+                            </td>
+                            <td>
+                                <%= order.customerEmail %>
+                            </td>
+                            <td>
+                                <%= new Date(order.createdAt).toLocaleDateString() %>
+                            </td>
+                            <td style="font-weight: bold;">$<%= order.totalAmount.toFixed(2) %>
+                            </td>
+                            <td>
+                                <span class="badge" data-status="<%= order.status %>">
+                                    <%= order.status %>
+                                </span>
+                            </td>
+                            <td class="text-end">
+                                <% if (order.status==='Placed' ) { %>
+                                    <form action="/admin/orders/<%= order._id %>/status" method="POST"
+                                        style="display:inline;">
+                                        <input type="hidden" name="newStatus" value="Processing">
+                                        <button type="submit" class="btn-admin btn-primary-admin"
+                                            style="font-size: 0.75rem;">
+                                            Mark Processing
+                                        </button>
+                                    </form>
+                                    <% } else if (order.status==='Processing' ) { %>
+                                        <form action="/admin/orders/<%= order._id %>/status" method="POST"
+                                            style="display:inline;">
+                                            <input type="hidden" name="newStatus" value="Delivered">
+                                            <button type="submit" class="btn-admin btn-success-admin"
+                                                style="font-size: 0.75rem;">
+                                                Mark Delivered
+                                            </button>
+                                        </form>
+                                        <% } else { %>
+                                            <span
+                                                style="color: #6c757d; font-size: 0.8rem; font-style: italic;">Completed</span>
+                                            <% } %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <%- include('partials/admin-footer') %>

@@ -1,0 +1,66 @@
+<%- include('partials/head', {title: 'My Order History' }) %>
+    <link rel="stylesheet" href="/products-styles.css">
+    <%- include('partials/header') %>
+
+        <main class="container" style="padding-top: 50px; padding-bottom: 50px;">
+            <h1 style="margin-bottom: 30px;">My Order History</h1>
+
+            <section style="background: #f9f9f9; padding: 30px; border-radius: 8px; margin-bottom: 40px;">
+                <h3 style="margin-bottom: 20px;">Find Your Orders</h3>
+                <form action="/my-orders" method="POST" style="display: flex; gap: 10px; align-items: center;">
+                    <input type="email" name="email" required placeholder="Enter your email" value="<%= email %>"
+                        style="padding: 12px; border: 1px solid #ccc; border-radius: 4px; flex-grow: 1; max-width: 400px;">
+                    <button type="submit" class="cta-button"
+                        style="border: none; cursor: pointer; font-size: inherit; padding: 12px 25px;">Search</button>
+                </form>
+            </section>
+
+            <% if (orders !==null) { %>
+                <% if (orders.length> 0) { %>
+                    <div style="overflow-x: auto;">
+                        <table
+                            style="width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-radius: 8px;">
+                            <thead>
+                                <tr style="background: #eee; border-bottom: 2px solid #ddd;">
+                                    <th style="text-align: left; padding: 15px;">Order ID</th>
+                                    <th style="text-align: left; padding: 15px;">Date</th>
+                                    <th style="text-align: right; padding: 15px;">Total</th>
+                                    <th style="text-align: center; padding: 15px;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% orders.forEach(order=> { %>
+                                    <tr style="border-bottom: 1px solid #eee;">
+                                        <td style="padding: 15px; font-family: monospace; font-size: 0.9rem;">
+                                            <%= order._id %>
+                                        </td>
+                                        <td style="padding: 15px;">
+                                            <%= new Date(order.createdAt).toLocaleDateString() %>
+                                        </td>
+                                        <td style="text-align: right; padding: 15px; font-weight: bold;">$<%=
+                                                order.totalAmount.toFixed(2) %>
+                                        </td>
+                                        <td style="text-align: center; padding: 15px;">
+                                            <span
+                                                style="background: #e1f5fe; color: #0288d1; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">
+                                                <%= order.status %>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <% } else { %>
+                        <div
+                            style="text-align: center; padding: 50px; background: #fff; border-radius: 8px; border: 1px dashed #ccc;">
+                            <h3 style="color: #666;">No orders found for this email address.</h3>
+                            <p>Make sure you used the correct email when placing your order.</p>
+                        </div>
+                        <% } %>
+                            <% } %>
+        </main>
+
+        <%- include('partials/footer') %>
+
+

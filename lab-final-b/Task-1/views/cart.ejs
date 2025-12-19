@@ -1,0 +1,60 @@
+<%- include('partials/head', {title: 'Your Cart' }) %>
+    <link rel="stylesheet" href="/products-styles.css">
+    <%- include('partials/header') %>
+
+        <main class="container" style="padding-top: 50px; padding-bottom: 50px;">
+            <h1 style="margin-bottom: 30px;">Your Shopping Cart</h1>
+
+            <% if (cart.length> 0) { %>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid #eee;">
+                            <th style="text-align: left; padding: 10px;">Product</th>
+                            <th style="text-align: right; padding: 10px;">Price</th>
+                            <th style="text-align: center; padding: 10px;">Quantity</th>
+                            <th style="text-align: right; padding: 10px;">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% cart.forEach(item=> { %>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 10px;">
+                                    <%= item.title %>
+                                </td>
+                                <td style="text-align: right; padding: 10px;">$<%= item.price.toFixed(2) %>
+                                </td>
+                                <td style="text-align: center; padding: 10px;">
+                                    <%= item.quantity %>
+                                </td>
+                                <td style="text-align: right; padding: 10px;">$<%= (item.price *
+                                        item.quantity).toFixed(2) %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style="text-align: right; padding: 10px; font-weight: bold;">Grand Total:
+                            </td>
+                            <td style="text-align: right; padding: 10px; font-weight: bold; font-size: 1.2rem;">$<%=
+                                    total.toFixed(2) %>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <a href="/" class="cta-button" style="background-color: #666;">Continue Shopping</a>
+                    <a href="/order/preview" class="cta-button">Proceed to Preview</a>
+                </div>
+                <% } else { %>
+                    <div style="text-align: center; padding: 50px;">
+                        <h3>Your cart is empty.</h3>
+                        <a href="/" class="cta-button" style="margin-top: 20px;">Go Shopping</a>
+                    </div>
+                    <% } %>
+        </main>
+
+        <%- include('partials/footer') %>
+
+

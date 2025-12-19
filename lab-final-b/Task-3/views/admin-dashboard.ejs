@@ -1,0 +1,36 @@
+<%- include('partials/admin-header', {title: 'Admin Dashboard' , activePage: 'dashboard' }) %>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Total Products</h3>
+            <div class="value">
+                <%= totalProducts %>
+            </div>
+        </div>
+        <div class="stat-card">
+            <h3>Categories</h3>
+            <div class="value">
+                <%= categories.length %>
+            </div>
+        </div>
+        <div class="stat-card">
+            <h3>Inventory Value</h3>
+            <div class="value">$<%= totalValue.toFixed(2) %>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-card">
+        <div class="card-header">
+            <h2>Recent Activity</h2>
+        </div>
+        <div class="admin-content">
+            <p>Manage your product database using the sidebar navigation. You can add, edit, or remove pet supplies in
+                real-time.</p>
+        </div>
+    </div>
+
+    <%- include('partials/admin-footer') %>
+
+
+
