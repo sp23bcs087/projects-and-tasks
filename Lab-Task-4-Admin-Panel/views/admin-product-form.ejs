@@ -1,0 +1,57 @@
+<%- include('partials/admin-header', {title: title, activePage: 'products' }) %>
+
+    <div class="admin-card" style="max-width: 800px; margin: 0 auto;">
+        <div class="card-header">
+            <h2>
+                <%= product._id ? 'Edit Product' : 'Add New Product' %>
+            </h2>
+            <a href="/admin/products" class="btn-admin btn-primary-admin">Back to List</a>
+        </div>
+        <div class="admin-content">
+            <form action="/admin/products/<%= product._id || '' %>" method="POST">
+                <div class="form-group">
+                    <label for="name">Product Name</label>
+                    <input type="text" name="name" id="name" class="form-control-admin"
+                        value="<%= product.name || '' %>" required>
+                </div>
+
+                <div class="row" style="display: flex; gap: 20px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="price">Price ($)</label>
+                        <input type="number" name="price" id="price" step="0.01" class="form-control-admin"
+                            value="<%= product.price || '' %>" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="category">Category</label>
+                        <select name="category" id="category" class="form-control-admin" required>
+                            <option value="Cats" <%=product.category==='Cats' ? 'selected' : '' %>>Cats</option>
+                            <option value="Dogs" <%=product.category==='Dogs' ? 'selected' : '' %>>Dogs</option>
+                            <option value="Birds" <%=product.category==='Birds' ? 'selected' : '' %>>Birds</option>
+                            <option value="Accessories" <%=product.category==='Accessories' ? 'selected' : '' %>
+                                >Accessories</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Image Path</label>
+                    <input type="text" name="image" id="image" class="form-control-admin"
+                        value="<%= product.image || '' %>" placeholder="/assets/flex_box_dog.jpg" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" rows="5" class="form-control-admin"
+                        required><%= product.description || '' %></textarea>
+                </div>
+
+                <button type="submit" class="btn-admin btn-success-admin"
+                    style="width: 100%; padding: 15px; font-size: 16px;">
+                    <i class="fas fa-save"></i>
+                    <%= product._id ? 'Update Product' : 'Create Product' %>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <%- include('partials/admin-footer') %>

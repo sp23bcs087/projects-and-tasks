@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - BeAnimals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/admin-styles.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="/assets/logo_window.png" alt="BeAnimals Admin">
+            <p>Admin Control</p>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="/admin"
+                class="<%= typeof activePage !== 'undefined' && activePage === 'dashboard' ? 'active' : '' %>">
+                <i class="fas fa-chart-line"></i> Dashboard
+            </a>
+            <a href="/admin/products"
+                class="<%= typeof activePage !== 'undefined' && activePage === 'products' ? 'active' : '' %>">
+                <i class="fas fa-box"></i> Products
+            </a>
+            <a href="/crud">
+                <i class="fas fa-blog"></i> Manage Blogs
+            </a>
+            <a href="/" target="_blank">
+                <i class="fas fa-external-link-alt"></i> View Website
+            </a>
+        </nav>
+    </aside>
+    <div class="main-wrapper">
+        <header class="admin-header">
+            <div class="header-left">
+                <h2>
+                    <%= title %>
+                </h2>
+            </div>
+            <div class="header-right">
+                <span>Welcome, Admin</span>
+            </div>
+        </header>
+        <main class="admin-content">
